@@ -6,7 +6,7 @@ module Voyeur
     end
 
     def convert_options
-      "-strict -2 -acodec vorbis -aq 60"
+      "-acodec libvorbis -aq 60"
     end
   end
 
