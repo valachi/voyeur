@@ -44,7 +44,7 @@ module Voyeur
     end
 
     def call_external_converter
-      command = "ffmpeg -y -i #{@input_media.filename} #{self.convert_options} #{@output_media.filename}"
+      command = %Q[ffmpeg -y -i "#{@input_media.filename}" #{self.convert_options} "#{@output_media.filename}"]
       out, err = ""
 
       ENGINE::popen4(command) do |pid, stdin, stdout, stderr|
